@@ -1,4 +1,6 @@
-let todos = [
+// api/todos.js
+
+const todos = [
   { id: 1, title: 'Buy groceries', completed: false },
   { id: 2, title: 'Walk the dog', completed: true },
   { id: 3, title: 'Finish React project', completed: false },
@@ -11,10 +13,10 @@ let todos = [
   { id: 10, title: 'Workout for 30 mins', completed: true },
 ];
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   if (req.method === 'GET') {
     res.status(200).json(todos);
   } else {
     res.status(405).end(); // Method Not Allowed
   }
-}
+};
